@@ -1,20 +1,24 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Bebas_Neue, DM_Sans } from 'next/font/google';
 import './globals.scss';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const bebasNeue = Bebas_Neue({
+  weight: '400',
+  variable: '--font-bebas',
   subsets: ['latin'],
+  display: 'swap',
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const dmSans = DM_Sans({
+  variable: '--font-dm-sans',
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
   title: 'Weight War',
-  description: 'Competitive weight tracker',
+  description: 'Competitive weight tracker — check in, stay disciplined, win the week.',
 };
 
 export default function RootLayout({
@@ -23,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang='en' className={`${bebasNeue.variable} ${dmSans.variable}`}>
       <body>{children}</body>
     </html>
   );

@@ -1,0 +1,6 @@
+// Theme barrel — import everything via: @use 'styles/theme' as t;
+@forward 'variables';
+@forward 'typography';
+@forward 'breakpoints';
+@forward 'mixins';
+@forward 'animations';

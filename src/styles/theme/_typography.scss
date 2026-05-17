@@ -1,0 +1,49 @@
+// =============================================================================
+// Typography — Weight War design system
+// Display: Bebas Neue (condensed bold — hero text, large headings, sidebar taglines)
+// UI: DM Sans (clean sans-serif — nav, labels, body, data)
+// =============================================================================
+
+// --- Font families ---
+// CSS variables are set by next/font/google in layout.tsx
+$font-display: var(--font-bebas), 'Impact', 'Arial Narrow', sans-serif;
+$font-sans:    var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+$font-mono:    'SF Mono', 'Fira Code', monospace;
+
+// --- Type scale (rem, 16px base) ---
+$text-xs:   0.75rem;    // 12px
+$text-sm:   0.875rem;   // 14px
+$text-base: 1rem;       // 16px
+$text-lg:   1.125rem;   // 18px
+$text-xl:   1.25rem;    // 20px
+$text-2xl:  1.5rem;     // 24px
+$text-3xl:  1.875rem;   // 30px
+$text-4xl:  2.25rem;    // 36px
+$text-5xl:  3rem;       // 48px
+$text-6xl:  3.75rem;    // 60px  — Bebas Neue hero text
+$text-7xl:  4.5rem;     // 72px  — Bebas Neue hero text (large)
+
+// --- Font weights ---
+$weight-regular:   400;
+$weight-medium:    500;
+$weight-semibold:  600;
+$weight-bold:      700;
+$weight-extrabold: 800;
+
+// Note: Bebas Neue only has weight 400 — boldness comes from the face itself.
+// Use $weight-regular with $font-display for all display headings.
+
+// --- Line heights ---
+$leading-none:    1;
+$leading-tight:   1.15;
+$leading-snug:    1.3;
+$leading-normal:  1.5;
+$leading-relaxed: 1.75;
+
+// --- Letter spacing ---
+$tracking-tightest: -0.04em;   // display headings (Bebas Neue)
+$tracking-tight:    -0.02em;   // large UI headings
+$tracking-normal:   0;
+$tracking-wide:     0.05em;
+$tracking-wider:    0.08em;    // ALL CAPS stat labels
+$tracking-widest:   0.15em;    // ALL CAPS section headers

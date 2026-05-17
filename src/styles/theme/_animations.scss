@@ -1,0 +1,85 @@
+// =============================================================================
+// Animation tokens and keyframes
+// =============================================================================
+
+// --- Duration presets ---
+$duration-instant: 100ms;
+$duration-fast:    150ms;
+$duration-normal:  250ms;
+$duration-slow:    400ms;
+
+// --- Easing presets ---
+$ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+$ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+$ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// --- Transition mixins ---
+@mixin transition-base {
+  transition: all $duration-normal $ease-out;
+}
+
+@mixin transition-fast {
+  transition: all $duration-fast $ease-out;
+}
+
+@mixin transition-props($props...) {
+  $list: ();
+  @each $prop in $props {
+    $list: append($list, #{$prop} $duration-normal $ease-out, comma);
+  }
+  transition: $list;
+}
+
+// =============================================================================
+// Keyframes
+// =============================================================================
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+// Leaderboard podium card reveal
+@keyframes podiumDrop {
+  from { opacity: 0; transform: translateY(-16px) scale(0.92); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+// Progress bar fill
+@keyframes fillBar {
+  from { width: 0%; }
+  to   { width: var(--fill-width, 100%); }
+}
+
+// --- Animation shorthand mixins ---
+@mixin animate-fade-in   { animation: fadeIn   $duration-normal $ease-out both; }
+@mixin animate-slide-up  { animation: slideUp  $duration-slow   $ease-out both; }
+@mixin animate-slide-down { animation: slideDown $duration-slow  $ease-out both; }
+@mixin animate-scale-in  { animation: scaleIn  $duration-normal $ease-out both; }
+@mixin animate-pulse     { animation: pulse    2s               $ease-in-out infinite; }
+@mixin animate-spin      { animation: spin     1s              linear infinite; }
