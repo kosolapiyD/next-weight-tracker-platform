@@ -9,6 +9,5 @@ Follow these steps exactly:
    - If needed, a blank line then a short body (what changed and why — not how)
 4. The commit message should follow the Conventional Commits standard.
 5. Show me the drafted message and ask for approval before committing.
-6. Once approved, run the commit using a heredoc so formatting is preserved.
 
 Do NOT commit if there is nothing staged. Do NOT add files — only commit what is already staged.
