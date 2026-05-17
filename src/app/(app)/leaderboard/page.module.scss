@@ -1,0 +1,28 @@
+.title {
+  margin-bottom: 12px;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.subtitle {
+  margin-bottom: 24px;
+  color: #b8b8bd;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  background: #19191d;
+}
+
+.cardText {
+  margin-top: 8px;
+  color: #b8b8bd;
+}
