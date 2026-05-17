@@ -1,17 +1,23 @@
+@use '../../styles/theme' as t;
+
 .shell {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: t.$sidebar-width 1fr;
   min-height: 100vh;
-  background:
-    linear-gradient(180deg, #111111 0%, #1a1a1d 100%);
 }
 
 .sidebar {
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-  background:
-    linear-gradient(180deg, #0d0d0f 0%, #141417 100%);
+  @include t.sidebar-surface;
+  @include t.custom-scrollbar-dark;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .content {
-  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: t.$color-bg-page;
 }

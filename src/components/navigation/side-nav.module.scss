@@ -1,56 +1,70 @@
+@use '../../styles/theme' as t;
+
 .nav {
   display: flex;
   flex-direction: column;
-  gap: 32px;
   height: 100%;
-  padding: 24px 16px;
+  padding: t.$space-6 t.$space-4;
+  gap: t.$space-8;
 }
 
 .brand {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 8px 8px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: t.$space-1;
+  padding: t.$space-2 t.$space-2 t.$space-5;
+  border-bottom: 1px solid t.$color-border-dark;
 }
 
 .brandTitle {
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  color: #ffffff;
+  font-family: t.$font-display;
+  font-size: t.$text-3xl;
+  letter-spacing: t.$tracking-wide;
+  color: t.$color-text-inverse;
+  line-height: t.$leading-none;
 }
 
 .brandSubtitle {
-  font-size: 13px;
-  color: #b8b8bd;
+  font-size: t.$text-xs;
+  font-weight: t.$weight-medium;
+  letter-spacing: t.$tracking-wider;
+  text-transform: uppercase;
+  color: t.$color-text-inverse-muted;
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: t.$space-1;
 }
 
 .link {
-  display: block;
-  border-radius: 14px;
-  padding: 14px 16px;
-  color: #d7d7db;
-  font-size: 15px;
-  font-weight: 700;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
+  display: flex;
+  align-items: center;
+  gap: t.$space-3;
+  border-radius: t.$radius-lg;
+  padding: 14px t.$space-4;
+  color: t.$color-text-inverse-muted;
+  font-size: t.$text-sm;
+  font-weight: t.$weight-semibold;
+  letter-spacing: t.$tracking-wide;
+  @include t.transition-fast;
 
-.link:hover {
-  background: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: t.$color-text-inverse;
+  }
+
+  &:focus-visible {
+    @include t.focus-ring;
+  }
 }
 
 .active {
-  background: #c51d2e;
-  color: #ffffff;
+  background: t.$color-brand;
+  color: t.$color-text-inverse;
+
+  &:hover {
+    background: t.$color-brand-hover;
+  }
 }

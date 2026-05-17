@@ -1,24 +1,25 @@
+@use '../../../styles/theme' as t;
+
 .title {
-  margin-bottom: 12px;
-  font-size: 32px;
-  font-weight: 800;
+  margin-bottom: t.$space-2;
+  font-size: t.$text-3xl;
+  font-weight: t.$weight-extrabold;
+  color: t.$color-text-primary;
 }
 
 .subtitle {
-  margin-bottom: 24px;
-  color: #b8b8bd;
+  margin-bottom: t.$space-6;
+  font-size: t.$text-sm;
+  color: t.$color-text-secondary;
 }
 
 .grid {
   display: grid;
-  gap: 16px;
+  gap: t.$space-4;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .card {
+  @include t.card;
   min-height: 180px;
-  padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 20px;
-  background: #19191d;
 }
